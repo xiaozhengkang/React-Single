@@ -10,6 +10,15 @@ export default defineConfig({
             '@': path.resolve(__dirname, './src')
         }
     },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                // 两种方式都可以
+                additionalData: `@import '@/styles/global.scss';`
+                // additionalData: '@use "@/assets/scss/global.scss" as *;'
+            }
+        }
+    },
     server: {
         host: true,
         port: 80
