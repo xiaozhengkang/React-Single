@@ -1,14 +1,22 @@
 import {useState} from 'react'
 import './App.scss'
 import * as styled from '@/styles/styled.css'
+import classnames from 'classnames'
 
 function App() {
     const [count, setCount] = useState(0)
     let isShow = false;
+    const myClass = classnames({
+        box: true,
+        box2: true
+    })
 
     return (
         <div className="App">
             <h1>Vite + React</h1>
+            <div className='Welcome'>
+                <h2 className={myClass}>这是一个标题</h2>
+            </div>
             <ul className={styled.todoList}>
                 <li className={styled.todoInfo}>学习 React 开发</li>
                 <li className={styled.todoInfo}>学习 Node.js 开发</li>
