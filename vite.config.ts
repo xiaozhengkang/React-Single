@@ -2,10 +2,11 @@ import {defineConfig} from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import path from 'path'
 import {viteMockServe} from 'vite-plugin-mock'
+import {vanillaExtractPlugin} from '@vanilla-extract/vite-plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react(), viteMockServe()],
+    plugins: [react(), viteMockServe(), vanillaExtractPlugin()],
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './src')

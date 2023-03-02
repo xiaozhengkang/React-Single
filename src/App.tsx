@@ -1,21 +1,18 @@
 import {useState} from 'react'
-import reactLogo from './assets/react.svg'
 import './App.scss'
+import * as styled from '@/styles/styled.css'
 
 function App() {
     const [count, setCount] = useState(0)
+    let isShow = false;
 
     return (
         <div className="App">
-            <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src="/vite.svg" className="logo" alt="Vite logo"/>
-                </a>
-                <a href="https://reactjs.org" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo"/>
-                </a>
-            </div>
             <h1>Vite + React</h1>
+            <ul className={styled.todoList}>
+                <li className={styled.todoInfo}>学习 React 开发</li>
+                <li className={styled.todoInfo}>学习 Node.js 开发</li>
+            </ul>
             <div className="card">
                 <button onClick={() => setCount((count) => count + 1)}>
                     count is {count}
@@ -24,9 +21,19 @@ function App() {
                     Edit <code>src/App.tsx</code> and save to test HMR
                 </p>
             </div>
-            <p className="read-the-docs">
-                Click on the Vite and React logos to learn more
-            </p>
+            <h1>jsx语法使用</h1>
+            <h2 title="hi" className="box">
+                hello world
+                <span>!!!!!!</span>
+                <label htmlFor="elemInput">用户名：</label>
+                <input id="elemInput"
+                       type="text"
+                       data-userid="123"/>
+            </h2>
+            <p>ppppppp</p>
+            {
+                isShow && 'hello world'
+            }
         </div>
     )
 }
